@@ -9,11 +9,12 @@ function preload() { // preload() runs once
       imgs.push([loadImage(filename)]);
       }
 }
-
-
 //////////////////////////////////////////////////////////
 function setup() {
-    createCanvas(100, 100);
+    const firstImage = imgs[0];
+    const canvasWidth = firstImage.width * 2; 
+    const canvasHeight = firstImage.height;
+    createCanvas(canvasWidth, canvasHeight);
     pixelDensity(1);
 
 }
