@@ -6,7 +6,7 @@ var numOfImages = 30;
 function preload() { // preload() runs once
     for (let i = 0; i < numOfImages; i++) {
         const filename = `./assets/${i}.jpg`;
-      imgs.push([loadImage(filename)]);
+      imgs.push(loadImage(filename));
       }
 }
 //////////////////////////////////////////////////////////
@@ -23,5 +23,10 @@ function setup() {
 //////////////////////////////////////////////////////////
 function draw() {
     background(125);
+
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].loadPixels();
+    }
+    avgImg.loadPixels();
 
 }
