@@ -15,7 +15,7 @@ function setup() {
     const canvasWidth = firstImage.width * 2; 
     const canvasHeight = firstImage.height;
     createCanvas(canvasWidth, canvasHeight);
-    image(firstImage, 0, 0);
+   
     avgImg = createGraphics(firstImage.width, firstImage.height);
     pixelDensity(1);
 
