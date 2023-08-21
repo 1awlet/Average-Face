@@ -8,6 +8,8 @@ function preload() { // preload() runs once
         const filename = `./assets/${i}.jpg`;
       imgs.push(loadImage(filename));
       }
+
+
 }
 //////////////////////////////////////////////////////////
 function setup() {
@@ -16,20 +18,38 @@ function setup() {
     const canvasHeight = firstImage.height;
     createCanvas(canvasWidth, canvasHeight);
    
-    avgImg = createGraphics(firstImage.width, firstImage.height);
+    avgImg = createGraphics(imgs[0].width, imgs[0].height);
     pixelDensity(1);
 
 }
 //////////////////////////////////////////////////////////
 function draw() {
     background(125);
+    loadIMages();
+    
 
+    calculateAverageImage()
+ 
+    image(imgs[0], 0, 0); // Display the original image on the left
+    image(avgImg, imgs[0].width,0); // Display the red average image on the right
+
+    noLoop(); //
+
+}
+
+
+function loadIMages (){
+    
     for (let i = 0; i < imgs.length; i++) {
         imgs[i].loadPixels();
     }
+}
+
+function calculateAverageImage (){
+
+ avgImg = createImage (imgs[0].width, imgs[0].height );
+
     avgImg.loadPixels();
-
-
     for (let y = 0; y < imgs[0].height; y++) {
         for (let x = 0; x < imgs[0].width; x++) {
             let index = (x + y * imgs[0].width) * 4;
@@ -58,9 +78,4 @@ function draw() {
     }
 
     avgImg.updatePixels();
-    image(imgs[0], 0, 0); // Display the original image on the left
-    image(avgImg, imgs[0].width, 0); // Display the red average image on the right
-
-    noLoop(); //
-
 }
