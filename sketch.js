@@ -37,10 +37,7 @@ function draw() {
     image(currentImg, 0, 0); // Display the original image on the left
     image(avgImg, imgs[0].width,0); // Display the red average image on the right
    
-    noFill();
-    stroke(0,0,255)
-    strokeWeight(3);
-    rect(width/2-100,height-25,200,25);
+ 
     noLoop(); //
 
 }
@@ -106,18 +103,21 @@ function keyPressed()
 function mouseMoved()
 {
     
-    //averaged = false;
-    amt = map(mouseX,420,604,0.0,1);
-   
-    averaged = true;
-    loop();
 
-    if(
-        mouseX >= width / 2 - 100 &&
-        mouseX <= width / 2 + 100 &&
-        mouseY >= height - 25 &&
-        mouseY <= height){
-          
-        }
+   
+
+    if (
+        mouseX >= imgs[0].width &&
+        mouseX <= imgs[0].width + avgImg.width &&
+        mouseY >= 0 &&
+        mouseY <= avgImg.height
+      ) {
+        amt = map(mouseX, imgs[0].width, imgs[0].width + avgImg.width, 0.0, 1);
+      
+        loop();
+      } else {
+        
+        noLoop();
+      }
 }
 
