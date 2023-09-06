@@ -1,0 +1,15 @@
+.instruction{
+    border: 1px solid red;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    height: 140px;
+    
+}
+.instruction h3{
+    border-bottom: 1px solid black;
+}
+.instruction ul li{
+    text-align: left;
+    font-size: 1.09rem;
+}
