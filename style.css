@@ -1,13 +1,17 @@
 .instruction{
     border: 1px solid red;
+    position: absolute;
+    top: 75%;
     text-align: center;
-    width: 50%;
+    width: 554px;
     margin: 0 auto;
-    height: 140px;
+    left: 15em;
+    height: fit-content;
     
 }
 .instruction h3{
     border-bottom: 1px solid black;
+    margin: 0;
 }
 .instruction ul li{
     text-align: left;
