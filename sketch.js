@@ -6,7 +6,7 @@ let amt = 1;
 let currentImg;
 
 
-//my code starts here
+
 // Preload function to load images
 function preload() {
   for (let i = 0; i < numOfImages; i++) {
@@ -15,9 +15,7 @@ function preload() {
   }
   currentImg = imgs[int(random(0, 30))];
 }
-//ends here
 
-//my code starts here
 // Setup function
 function setup() {
   const firstImage = imgs[0];
@@ -29,9 +27,9 @@ function setup() {
   avgImg = createGraphics(imgs[0].width, imgs[0].height);
   pixelDensity(1);
 }
-//ends here
 
-//my code starts here
+
+
 // Draw function
 function draw() {
   background(125);
@@ -48,18 +46,15 @@ function draw() {
 
   noLoop(); // Prevent continuous redrawing
 }
-//ends here
 
-//my code starts here
 // Load pixel data for all images
 function loadImages() {
   for (let i = 0; i < imgs.length; i++) {
     imgs[i].loadPixels();
   }
 }
-//ends here
 
-//my code starts here
+
 // Calculate the average image by blending pixel colors
 function calculateAverageImage() {
   avgImg = createImage(currentImg.width, currentImg.height);
@@ -103,10 +98,7 @@ function calculateAverageImage() {
   // Update pixel data for the average image
   avgImg.updatePixels();
 }
-//ends here
 
-
-//my code starts here
 // Function to change the current image on spacebar press
 function keyPressed() {
   if (keyCode == 32) {
@@ -116,9 +108,7 @@ function keyPressed() {
   }
   return false;
 }
-//ends
 
-//my code starts here
 // Function to adjust the blend amount based on mouse position
 function mouseMoved() {
   if (
@@ -133,4 +123,3 @@ function mouseMoved() {
     noLoop();
   }
 }
-//ends here
